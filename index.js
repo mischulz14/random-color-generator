@@ -22,20 +22,19 @@ let chosenColorByUser = args[0];
 let chosenLuminosityByUser = args[1];
 
 if (args[0]) {
+  if (args[0].includes('x')) {
+    const splittedString = args[0].split('x');
+    width = splittedString[0];
+    height = splittedString[1];
+
+    chosenColorByUser = args[1];
+    chosenLuminosityByUser = args[2];
+  }
   color = randomColor({
-    luminosity: args[1] ? chosenLuminosityByUser : 'random',
+    luminosity: chosenLuminosityByUser ? chosenLuminosityByUser : 'random',
     hue: chosenColorByUser,
   });
 }
-
-// if (args[0].includes('x')) {
-//   const splittedString = args[0].split('x');
-//   width = splittedString[0];
-//   height = splittedString[1];
-
-//   chosenColorByUser = args[1];
-//   chosenLuminosityByUser = args[2];
-// }
 
 // if (args[0] === 'ask') {
 //   rl.question('What color do you want?', (color) => {
