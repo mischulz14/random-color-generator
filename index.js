@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import test from 'node:test';
 import randomColor from 'randomcolor';
 // import readline from 'readline';
 
