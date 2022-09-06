@@ -1,13 +1,17 @@
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
+let pattern = '';
+let height = 9;
+let width = 31;
+const args = process.argv.slice(2);
 
 let color = randomColor({
   luminosity: 'random',
   hue: 'random',
 });
 
-const chosenColorByUser = process.argv[2];
-const chosenLuminosityByUser = process.argv[3];
+const chosenColorByUser = args[0];
+const chosenLuminosityByUser = args[1];
 
 if (process.argv[2]) {
   color = randomColor({
@@ -16,26 +20,22 @@ if (process.argv[2]) {
   });
 }
 
-if (!chosenColorByUser) {
-  for (let i = 1; i < 10; i++) {
-    if (i === 4 || i == 6) {
-      console.log(chalk.hex(color).bold('#####          ######'));
-    } else if (i === 5) {
-      console.log(chalk.hex(color).bold(`#####  ${color} ######`));
+for (let i = 1; i <= height; i++) {
+  if (i < Math.ceil(height / 2) - 1 || i > Math.ceil(height / 2) + 1) {
+    pattern += '#'.repeat(width) + '\n';
+  } else {
+    if (i === Math.ceil(height / 2) - 1 || i === Math.ceil(height / 2) + 1) {
+      pattern += '#'.repeat(5) + ' '.repeat(width - 10) + '#'.repeat(5) + '\n';
     } else {
-      console.log(chalk.hex(color).bold('#####################'));
+      pattern +=
+        '#'.repeat(5) +
+        ' '.repeat((width - 10) / 2 - 3.5) +
+        color +
+        ' '.repeat((width - 10) / 2 - 3.5) +
+        '#'.repeat(5) +
+        '\n';
     }
   }
 }
 
-if (process.argv[2]) {
-  for (let i = 1; i < 10; i++) {
-    if (i === 4 || i == 6) {
-      console.log(chalk.hex(color).bold('#####          ######'));
-    } else if (i === 5) {
-      console.log(chalk.hex(color).bold(`#####  ${color} ######`));
-    } else {
-      console.log(chalk.hex(color).bold('#####################'));
-    }
-  }
-}
+console.log(chalk.hex(color).bold(pattern));
