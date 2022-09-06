@@ -1,4 +1,4 @@
-##### RANDOM COLOR GENERATOR IN NODE
+# RANDOM COLOR GENERATOR IN NODE
 
 This generator generates random colors upon running the program and projects them in the command line in this format (by default):
 
