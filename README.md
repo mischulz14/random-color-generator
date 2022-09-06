@@ -1,6 +1,6 @@
-##### RANDOM NUMBER GENERATOR IN NODE
+##### RANDOM COLOR GENERATOR IN NODE
 
-This generator generates random numbers upon running the program and projects them in the command line in this format (by default):
+This generator generates random colors upon running the program and projects them in the command line in this format (by default):
 
 ![default](https://user-images.githubusercontent.com/1935696/92607675-b56bd700-f2b4-11ea-9085-67af9369fa71.png)
 
