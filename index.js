@@ -1,11 +1,5 @@
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
-// import readline from 'readline';
-
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout,
-// });
 
 let pattern = '';
 let height = 9;
@@ -34,16 +28,6 @@ if (args[0]) {
     hue: chosenColorByUser,
   });
 }
-
-// if (args[0] === 'ask') {
-//   rl.question('What color do you want?', (color) => {
-//     rl.question('And what luminosity?', (luminosity) => {
-//       chosenColorByUser = color;
-//       chosenLuminosityByUser = luminosity;
-//       rl.close();
-//     });
-//   });
-// }
 
 for (let i = 1; i <= height; i++) {
   if (i < Math.ceil(height / 2) - 1 || i > Math.ceil(height / 2) + 1) {
