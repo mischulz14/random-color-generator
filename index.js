@@ -31,7 +31,8 @@ if (args[0]) {
 
 for (let i = 1; i <= height; i++) {
   if (i < Math.ceil(height / 2) - 1 || i > Math.ceil(height / 2) + 1) {
-    pattern += '#'.repeat(width) + '\n';
+    if (i === height) pattern += '#'.repeat(width);
+    else pattern += '#'.repeat(width) + '\n';
   } else {
     if (i === Math.ceil(height / 2) - 1 || i === Math.ceil(height / 2) + 1) {
       pattern += '#'.repeat(5) + ' '.repeat(width - 10) + '#'.repeat(5) + '\n';
