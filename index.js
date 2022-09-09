@@ -47,4 +47,4 @@ for (let i = 1; i <= height; i++) {
   }
 }
 
-console.log(chalk.hex(color).bold(pattern));
+console.log(chalk.hex(color).visible(pattern));
